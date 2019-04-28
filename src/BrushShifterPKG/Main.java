@@ -29,7 +29,7 @@ public class Main
                     "ARGUMENT 0 (String): The name of a map file if present in directory, otherwise provide full path\n" +
                     "ARGUMENT 1 (Integer): The X shift amount\n" +
                     "ARGUMENT 2 (Integer): The Y shift amount\n" +
-                    "ARGUMENT 3 (Integer): The Z shift amount\n");
+                    "ARGUMENT 3 (Integer): The Z shift amount");
 
             argumentsValid = false;
         }
@@ -129,7 +129,14 @@ public class Main
             int yShift = Integer.parseInt(args[2]);
             int zShift = Integer.parseInt(args[3]);
 
-            MapProcessor cpm5Procesor = new MapProcessor(mapFile);
+            //Create the map processor object and pass it the file
+            MapProcessor cpm5Processor = new MapProcessor(mapFile);
+
+            //Execute further instructions only if the file was validated
+            if (cpm5Processor.reflexValidated)
+            {
+                cpm5Processor.extractVerts();
+            }
         }
 
     }
