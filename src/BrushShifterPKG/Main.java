@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class Main
 {
-
     public static void main(String[] args)
     {
         //argument 0: Map file name
@@ -21,7 +20,7 @@ public class Main
 
         //********CODE BELOW CHECKS FOR INPUT VALIDITY********
 
-        //First of all, check that they have the right amount of inputs
+        //First of all, check that they have the right amount of inputs, which should be exactly 4
         if (args.length > 4 || args.length < 4)
         {
             System.out.println("You have an incorrect number of arguments. The input format is as follows:\n" +
