@@ -45,7 +45,7 @@ public class MapProcessor
             mapScanner = new Scanner(new File(mapFile));
 
             //Tell the user everything is honky dory for the scanner
-            System.out.println("Loaded your file: " + mapFile);
+            System.out.println("\nLoaded your file: " + mapFile);
 
             //Initialize the file writer
             mapWriter = new FileWriter(mapFile.substring(0, mapFile.length() - 4) + "_processed.map");
@@ -54,7 +54,7 @@ public class MapProcessor
             System.out.println("Initialized empty map file for writing: " + "processed_" + mapFile);
 
             lines = new String[lineCount()];
-            System.out.println("Created array of lines with size " + lines.length);
+            System.out.println("\nCreated array of lines with size " + lines.length);
         }
     }
 
@@ -64,6 +64,21 @@ public class MapProcessor
     public void processFile() throws IOException
     {
         createLinesArray();
+
+        for (int i = 0; i < lines.length; i++)
+        {
+            if (lines[i].contains("vertices"))
+            {
+                for (int j = i; j < lines.length; j++)
+                {
+                    if (lines[j].contains("faces"))
+                    {
+                        extractVerts(i, j);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -111,9 +126,9 @@ public class MapProcessor
     /**
      * When called, this method will extract the vertices
      */
-    private void extractVerts()
+    private void extractVerts(int start, int end)
     {
-
+        //System.out.println("EXTRACTING FROM: " + start + " to " + end);
     }
 
     /**
@@ -129,12 +144,12 @@ public class MapProcessor
         if (reflexValidator.next().contains("reflex"))
         {
             reflexValidated = true;
-            System.out.println("This is a valid Reflex Arena map file");
+            System.out.println("\nThis is a valid Reflex Arena map file");
         }
 
         else
         {
-            System.out.println("This is not a Reflex Arena map file");
+            System.out.println("\nThis is not a Reflex Arena map file");
         }
     }
 }
