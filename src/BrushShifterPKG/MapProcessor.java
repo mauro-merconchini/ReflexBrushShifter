@@ -65,20 +65,45 @@ public class MapProcessor
     {
         createLinesArray();
 
+        //These two integers will hold the values for which a gap will be left for the vertex groups
+        //Initialized to unreachable values
+        int startGap = lines.length + 1;
+        int endGap = lines.length + 1;
+
+        //This process will find the start and end of a vertex group (in between "vertices" and "faces") and call the helper method
         for (int i = 0; i < lines.length; i++)
         {
             if (lines[i].contains("vertices"))
             {
-                for (int j = i; j < lines.length; j++)
+                for (int j = i + 1; j < lines.length; j++)
                 {
                     if (lines[j].contains("faces"))
                     {
-                        extractVerts(i, j);
+                        //Call the helper method with the start and end
+                        processVerts(i + 1, j);
+
+                        startGap = i;
+                        endGap = j;
+
                         break;
                     }
                 }
             }
+
+            //If the current line falls between the gap, leave the line blank
+            else if (i > startGap && i < endGap)
+            {
+                mapWriter.write("\n");
+            }
+
+            //Else, write the lines normally
+            else
+            {
+                mapWriter.write(lines[i] + "\n");
+            }
         }
+
+        mapWriter.close();
     }
 
     /**
@@ -126,9 +151,18 @@ public class MapProcessor
     /**
      * When called, this method will extract the vertices
      */
-    private void extractVerts(int start, int end)
+    private void processVerts(int start, int end) throws IOException
     {
-        //System.out.println("EXTRACTING FROM: " + start + " to " + end);
+        System.out.println("EXTRACTING FROM: " + start + " to " + end + "\n");
+
+        mapWriter.write("\t\tvertices");
+
+        Scanner vertScanner;
+
+        for (int i = start; i < end; i++)
+        {
+            vertScanner = new Scanner(lines[i]);
+        }
     }
 
     /**
