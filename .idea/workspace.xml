@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0d6eb81e-e623-4509-a516-23c914aef02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/MapVertexExtractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,10 +18,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3290">
-              <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+            <state relative-caret-position="414">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +45,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/BrushShifterPKG/MapVertexExtractor.java" />
-        <option value="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" />
         <option value="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" />
+        <option value="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" />
       </list>
     </option>
   </component>
@@ -94,7 +91,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556479467301" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556480505808" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -199,20 +196,20 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="630">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3290">
-          <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+        <state relative-caret-position="414">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

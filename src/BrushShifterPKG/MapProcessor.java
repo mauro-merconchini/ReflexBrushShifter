@@ -31,12 +31,19 @@ public class MapProcessor
         //Initialize the map scanner
         mapScanner = new Scanner(new File(mapFile));
 
-        //Initialize the file writer
-        mapWriter = new FileWriter("processed_" + mapFile);
-
-        //Tell the user everything is honky dory
+        //Tell the user everything is honky dory for the scanner
         System.out.println("Found your file: " + mapFile);
+
+        //Initialize the file writer
+        mapWriter = new FileWriter(mapFile.substring(0, mapFile.length() - 4) + "_processed.map");
+
+        //Tell the user everything is honky dory for the writer
+        System.out.println("Initialized empty map file for writing: " + "processed_" + mapFile);
     }
 
+    public void extractVerts()
+    {
+
+    }
 
 }
