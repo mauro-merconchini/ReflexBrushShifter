@@ -72,7 +72,7 @@ public class Main
                     //If the argument is an integer, it must be good
                     if (inputScanner.hasNextInt())
                     {
-                        System.out.println("ARG 1 is good");
+                        System.out.println("ARGUMENT 1 is good");
                     }
 
                     else
@@ -89,7 +89,7 @@ public class Main
                     //If the argument is an integer, it must be good
                     if (inputScanner.hasNextInt())
                     {
-                        System.out.println("ARG 2 is good");
+                        System.out.println("ARGUMENT 2 is good");
                     }
 
                     else
@@ -106,7 +106,7 @@ public class Main
                     //If the argument is an integer, it must be good
                     if (inputScanner.hasNextInt())
                     {
-                        System.out.println("ARG 3 is good");
+                        System.out.println("ARGUMENT 3 is good");
                     }
 
                     else
@@ -135,7 +135,7 @@ public class Main
             //Execute further instructions only if the file was validated
             if (cpm5Processor.reflexValidated)
             {
-                cpm5Processor.extractVerts();
+                cpm5Processor.processFile();
             }
         }
 
