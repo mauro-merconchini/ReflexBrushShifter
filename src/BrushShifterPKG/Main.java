@@ -41,33 +41,42 @@ public class Main
             Scanner inputScanner;
 
             //This for loop will check each input
-            for (int i = 0; i < args.length; i++) {
+            for (int i = 0; i < args.length; i++)
+            {
                 //This string will hold the current argument
                 String currentArg = args[i];
                 //Set the scanner to scan the current argument
                 inputScanner = new Scanner(currentArg);
 
                 //If this is the first argument (argument 0), and it has any value
-                if (i == 0 && inputScanner.hasNext()) {
+                if (i == 0 && inputScanner.hasNext())
+                {
                     //Throw an error if the input does not have the .map file type
-                    if (!inputScanner.next().contains(".map")) {
+                    if (!inputScanner.next().contains(".map"))
+                    {
                         System.out.println("ARGUMENT 0 Error: This is not a .map file");
 
                         argumentsValid = false;
                     }
 
                     //Else, it must be good
-                    else {
+                    else
+                    {
                         System.out.println("ARGUMENT 0 is good");
                     }
                 }
 
                 //If this is the second argument (argument 1)
-                else if (i == 1) {
+                else if (i == 1)
+                {
                     //If the argument is an integer, it must be good
-                    if (inputScanner.hasNextInt()) {
+                    if (inputScanner.hasNextInt())
+                    {
                         System.out.println("ARG 1 is good");
-                    } else {
+                    }
+
+                    else
+                    {
                         System.out.println("ARGUMENT 1 Error: This is not an integer");
 
                         argumentsValid = false;
@@ -75,11 +84,16 @@ public class Main
                 }
 
                 //If this is the third argument (argument 2)
-                else if (i == 2) {
+                else if (i == 2)
+                {
                     //If the argument is an integer, it must be good
-                    if (inputScanner.hasNextInt()) {
+                    if (inputScanner.hasNextInt())
+                    {
                         System.out.println("ARG 2 is good");
-                    } else {
+                    }
+
+                    else
+                    {
                         System.out.println("ARGUMENT 2 Error: This is not an integer");
 
                         argumentsValid = false;
@@ -87,11 +101,16 @@ public class Main
                 }
 
                 //If this is the fourth argument (argument 3)
-                else if (i == 3) {
+                else if (i == 3)
+                {
                     //If the argument is an integer, it must be good
-                    if (inputScanner.hasNextInt()) {
+                    if (inputScanner.hasNextInt())
+                    {
                         System.out.println("ARG 3 is good");
-                    } else {
+                    }
+
+                    else
+                    {
                         System.out.println("ARGUMENT 3 Error: This is not an integer");
 
                         argumentsValid = false;

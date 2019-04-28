@@ -1,6 +1,7 @@
 package BrushShifterPKG;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -16,6 +17,10 @@ public class MapProcessor
     //This scanner will perform scans on the map file
     private Scanner mapScanner;
 
+    //This scanner will check that the map file is from Reflex, the boolean will hold whether or not it is
+    private Scanner reflexValidator;
+    public boolean reflexValidated = false;
+
     //This will take care of writing the new file
     private FileWriter mapWriter;
 
@@ -25,20 +30,25 @@ public class MapProcessor
      */
     public MapProcessor(String mapFile) throws IOException
     {
-        //Set the map file parameter
-        this.mapFile = mapFile;
+        validateReflexMapFile(mapFile);
 
-        //Initialize the map scanner
-        mapScanner = new Scanner(new File(mapFile));
+        if (reflexValidated)
+        {
+            //Set the map file parameter
+            this.mapFile = mapFile;
 
-        //Tell the user everything is honky dory for the scanner
-        System.out.println("Found your file: " + mapFile);
+            //Initialize the map scanner
+            mapScanner = new Scanner(new File(mapFile));
 
-        //Initialize the file writer
-        mapWriter = new FileWriter(mapFile.substring(0, mapFile.length() - 4) + "_processed.map");
+            //Tell the user everything is honky dory for the scanner
+            System.out.println("Loaded your file: " + mapFile);
 
-        //Tell the user everything is honky dory for the writer
-        System.out.println("Initialized empty map file for writing: " + "processed_" + mapFile);
+            //Initialize the file writer
+            mapWriter = new FileWriter(mapFile.substring(0, mapFile.length() - 4) + "_processed.map");
+
+            //Tell the user everything is honky dory for the writer
+            System.out.println("Initialized empty map file for writing: " + "processed_" + mapFile);
+        }
     }
 
     public void extractVerts()
@@ -46,4 +56,20 @@ public class MapProcessor
 
     }
 
+    private void validateReflexMapFile(String mapToCheck) throws FileNotFoundException
+    {
+        //Initialize the map scanner
+        reflexValidator = new Scanner(new File(mapToCheck));
+
+        if (reflexValidator.next().contains("reflex"))
+        {
+            reflexValidated = true;
+            System.out.println("This is a valid Reflex Arena map file");
+        }
+
+        else
+        {
+            System.out.println("This is not a Reflex Arena map file");
+        }
+    }
 }
