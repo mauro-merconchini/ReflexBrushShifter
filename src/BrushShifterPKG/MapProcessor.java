@@ -51,11 +51,19 @@ public class MapProcessor
         }
     }
 
+    /**
+     * This method will read through the map file, pull out the vertex values, and call MapMather
+     */
     public void extractVerts()
     {
 
     }
 
+    /**
+     * This method will perform a validation check to make sure the map file is from Reflex Arena
+     * @param mapToCheck The name of the map file to validate
+     * @throws FileNotFoundException
+     */
     private void validateReflexMapFile(String mapToCheck) throws FileNotFoundException
     {
         //Initialize the map scanner
