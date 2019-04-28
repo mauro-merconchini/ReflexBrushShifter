@@ -1,5 +1,6 @@
 package BrushShifterPKG;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -9,16 +10,17 @@ import java.util.Scanner;
  */
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         //argument 0: Map file name
         //argument 1: X shift
         //argument 2: Y shift
         //argument 3: Z shift
 
-        //checkInputValidity();
-
         //********CODE BELOW CHECKS FOR INPUT VALIDITY********
+
+        //This will hold whether the user arguments are valid, if any checks below trip this to false, no execution code will run
+        boolean argumentsValid = true;
 
         //First of all, check that they have the right amount of inputs, which should be exactly 4
         if (args.length > 4 || args.length < 4)
@@ -28,6 +30,8 @@ public class Main
                     "ARGUMENT 1 (Integer): The X shift amount\n" +
                     "ARGUMENT 2 (Integer): The Y shift amount\n" +
                     "ARGUMENT 3 (Integer): The Z shift amount\n");
+
+            argumentsValid = false;
         }
 
         //Once we confirm that the user has the right amount of inputs, check them individually for validity
@@ -47,12 +51,14 @@ public class Main
                 if (i == 0 && inputScanner.hasNext()) {
                     //Throw an error if the input does not have the .map file type
                     if (!inputScanner.next().contains(".map")) {
-                        System.out.println("ARG 0 Error: This is not a .map file");
+                        System.out.println("ARGUMENT 0 Error: This is not a .map file");
+
+                        argumentsValid = false;
                     }
 
                     //Else, it must be good
                     else {
-                        System.out.println("ARG 0 is good");
+                        System.out.println("ARGUMENT 0 is good");
                     }
                 }
 
@@ -62,7 +68,9 @@ public class Main
                     if (inputScanner.hasNextInt()) {
                         System.out.println("ARG 1 is good");
                     } else {
-                        System.out.println("ARG 1 Error: This is not an integer");
+                        System.out.println("ARGUMENT 1 Error: This is not an integer");
+
+                        argumentsValid = false;
                     }
                 }
 
@@ -72,7 +80,9 @@ public class Main
                     if (inputScanner.hasNextInt()) {
                         System.out.println("ARG 2 is good");
                     } else {
-                        System.out.println("ARG 2 Error: This is not an integer");
+                        System.out.println("ARGUMENT 2 Error: This is not an integer");
+
+                        argumentsValid = false;
                     }
                 }
 
@@ -82,10 +92,26 @@ public class Main
                     if (inputScanner.hasNextInt()) {
                         System.out.println("ARG 3 is good");
                     } else {
-                        System.out.println("ARG 3 Error: This is not an integer");
+                        System.out.println("ARGUMENT 3 Error: This is not an integer");
+
+                        argumentsValid = false;
                     }
                 }
             }
         }
+
+        //**********CODE BELOW WILL PROCESS MAP FILE**********
+
+        if (argumentsValid)
+        {
+            //The following 4 declarations will hold the arguments
+            String mapFile = args[0];
+            int xShift = Integer.parseInt(args[1]);
+            int yShift = Integer.parseInt(args[2]);
+            int zShift = Integer.parseInt(args[3]);
+
+            MapProcessor cpm5Procesor = new MapProcessor(mapFile);
+        }
+
     }
 }

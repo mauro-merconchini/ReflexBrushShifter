@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java" line="40" />
+    <bookmark url="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java" line="44" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d6eb81e-e623-4509-a516-23c914aef02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ReflexBrushShifter/BrushShifterPKG/MapVertexExtractor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BrushShifterPKG/MapVertexExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +23,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="3290">
+              <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,6 +48,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/BrushShifterPKG/MapVertexExtractor.java" />
+        <option value="$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java" />
         <option value="$PROJECT_DIR$/src/BrushShifterPKG/Main.java" />
       </list>
     </option>
@@ -88,7 +94,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556476937503" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556479467301" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -195,15 +201,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/MapProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="1260">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BrushShifterPKG/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="3290">
+          <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
