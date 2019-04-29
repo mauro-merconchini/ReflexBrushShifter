@@ -77,10 +77,13 @@ public class MapProcessor
         //This process will find the start and end of a vertex group (in between "vertices" and "faces") and call the helper method
         for (int i = 0; i < lines.length; i++)
         {
+            //If you find the "vertices" line (start of a vertex group)
             if (lines[i].contains("vertices"))
             {
+                //Scan ahead until...
                 for (int j = i + 1; j < lines.length; j++)
                 {
+                    //...you find the "faces" line (end of a vertex group)
                     if (lines[j].contains("faces"))
                     {
                         //Call the helper method with the start and end
@@ -94,12 +97,6 @@ public class MapProcessor
                         break;
                     }
                 }
-            }
-
-            //If the current line falls between the gap, leave the line blank
-            else if (i > startGap && i < endGap)
-            {
-                mapWriter.write("\n");
             }
 
             //Else, write the lines normally
