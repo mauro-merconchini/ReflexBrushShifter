@@ -26,7 +26,7 @@ public class Main
         if (args.length > 4 || args.length < 4)
         {
             System.out.println("You have an incorrect number of arguments. The input format is as follows:\n" +
-                    "ARGUMENT 0 (String): The name of a map file if present in directory, otherwise provide full path\n" +
+                    "ARGUMENT 0 (String): The name of a .map file (present in this directory)\n" +
                     "ARGUMENT 1 (Integer): The X shift amount\n" +
                     "ARGUMENT 2 (Integer): The Y shift amount\n" +
                     "ARGUMENT 3 (Integer): The Z shift amount");
