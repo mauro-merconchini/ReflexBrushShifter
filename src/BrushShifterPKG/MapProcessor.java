@@ -77,13 +77,10 @@ public class MapProcessor
         //This process will find the start and end of a vertex group (in between "vertices" and "faces") and call the helper method
         for (int i = 0; i < lines.length; i++)
         {
-            //If you find the "vertices" line (start of a vertex group)
             if (lines[i].contains("vertices"))
             {
-                //Scan ahead until...
                 for (int j = i + 1; j < lines.length; j++)
                 {
-                    //...you find the "faces" line (end of a vertex group)
                     if (lines[j].contains("faces"))
                     {
                         //Call the helper method with the start and end
@@ -93,10 +90,16 @@ public class MapProcessor
                         startGap = i;
                         endGap = j;
 
-                        //Back out of this loop
+                        //Break this loop
                         break;
                     }
                 }
+            }
+
+            //If the current line falls between the gap, skip this iteration of the loop
+            else if (i > startGap && i < endGap)
+            {
+                continue;
             }
 
             //Else, write the lines normally
@@ -160,7 +163,7 @@ public class MapProcessor
         double vertX, vertY, vertZ;
 
         //Tell user where the extraction is happening
-        System.out.println("EXTRACTING FROM: " + start + " to " + end + "\n");
+        System.out.println("Processing Vertex Group: " + start + " to " + end + "\n");
 
         //This is to print the "vertices" line in the file, do not touch or the entire formatting will be off
         mapWriter.write("\t\tvertices\n");
