@@ -1,0 +1,70 @@
+reflex map version 8
+global
+	entity
+		type WorldSpawn
+		String32 targetGameOverCamera end
+		Float sky.timeOfDay 16.111975
+		Float sky.skyAngle 229.060364
+		ColourXRGB32 sky.skyTopColor ffd49e1a
+		ColourXRGB32 sky.skyHorizonColor fffaf50d
+		ColourXRGB32 sky.cloudsColor ff7d7d73
+		Float sky.cloudsSpeed.x 5.000000
+		Float sky.cloudsCoverageMultiplier 15.000000
+		Float sky.cloudsRoughness 0.250000
+		Float sky.cloudsDensity 1.000000
+		Float sky.cloudsThickness 2.000000
+		UInt8 playersMin 1
+		UInt8 playersMax 16
+	brush
+		vertices
+			-616.000000 496.000000 -108.000000
+			-488.000000 496.000000 -108.000000
+			-488.000000 496.000000 -236.000000
+			-616.000000 496.000000 -236.000000
+			-616.000000 464.000000 -108.000000
+			-488.000000 464.000000 -108.000000
+			-488.000000 464.000000 -236.000000
+			-616.000000 464.000000 -236.000000
+		faces
+			0.000000 0.000000 1.000000 1.000000 0.000000 0 1 2 3 0x00000000 
+			0.000000 0.000000 1.000000 1.000000 0.000000 6 5 4 7 0x00000000 
+			0.000000 0.000000 1.000000 1.000000 0.000000 2 1 5 6 0x00000000 
+			0.000000 0.000000 1.000000 1.000000 0.000000 0 3 7 4 0x00000000 
+			0.000000 0.000000 1.000000 1.000000 0.000000 3 2 6 7 0x00000000 
+			0.000000 0.000000 1.000000 1.000000 0.000000 1 0 4 5 0x00000000 
+	entity
+		type CameraPath
+		UInt8 posLerp 2
+		UInt8 angleLerp 2
+	entity
+		type Effect
+		Vector3 position -616.000000 496.000000 -108.000000
+		String64 effectName vertex1_handmade
+	entity
+		type Effect
+		Vector3 position -488.000000 496.000000 -108.000000
+		String64 effectName vertex2_handmade
+	entity
+		type Effect
+		Vector3 position -488.000000 496.000000 -236.000000
+		String64 effectName vertex3_handmade
+	entity
+		type Effect
+		Vector3 position -616.000000 496.000000 -236.000000
+		String64 effectName vertex4_handmade
+	entity
+		type Effect
+		Vector3 position -616.000000 464.000000 -108.000000
+		String64 effectName vertex5_handmade
+	entity
+		type Effect
+		Vector3 position -488.000000 464.000000 -108.000000
+		String64 effectName vertex6_handmade
+	entity
+		type Effect
+		Vector3 position -488.000000 464.000000 -236.000000
+		String64 effectName vertex7_handmade
+	entity
+		type Effect
+		Vector3 position -616.000000 464.000000 -236.000000
+		String64 effectName vertex8_handmade

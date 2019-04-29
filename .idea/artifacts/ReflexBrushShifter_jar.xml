@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ReflexBrushShifter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ReflexBrushShifter_jar</output-path>
+    <root id="archive" name="ReflexBrushShifter.jar">
+      <element id="module-output" name="ReflexBrushShifter" />
+    </root>
+  </artifact>
+</component>
