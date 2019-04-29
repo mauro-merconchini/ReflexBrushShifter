@@ -135,7 +135,7 @@ public class Main
             //Execute further instructions only if the file was validated
             if (cpm5Processor.reflexValidated)
             {
-                cpm5Processor.processFile();
+                cpm5Processor.shiftMap(xShift, yShift, zShift);
             }
         }
 

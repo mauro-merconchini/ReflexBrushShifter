@@ -59,9 +59,13 @@ public class MapProcessor
     }
 
     /**
-     * This method will read through the map file, call appropriate helper methods, and write resultant file
+     * Perform tasks and call helper methods necessary to shift every brush in the map by a determined integer amount
+     * @param xShift The amount to shift in the X axis
+     * @param yShift The amount to shift in the Y axis
+     * @param zShift The amount to shift in the Z axis
+     * @throws IOException
      */
-    public void processFile() throws IOException
+    public void shiftMap(int xShift, int yShift, int zShift) throws IOException
     {
         createLinesArray();
 
@@ -80,11 +84,13 @@ public class MapProcessor
                     if (lines[j].contains("faces"))
                     {
                         //Call the helper method with the start and end
-                        processVerts(i + 1, j);
+                        processVerts(i + 1, j, xShift, yShift, zShift);
 
+                        //Set the start and end of the gap
                         startGap = i;
                         endGap = j;
 
+                        //Back out of this loop
                         break;
                     }
                 }
@@ -151,17 +157,41 @@ public class MapProcessor
     /**
      * When called, this method will extract the vertices
      */
-    private void processVerts(int start, int end) throws IOException
+    private void processVerts(int start, int end, int xShift, int yShift, int zShift) throws IOException
     {
+        //These doubles will hold the coordinates of a vertex
+        double vertX, vertY, vertZ;
+
+        //Tell user where the extraction is happening
         System.out.println("EXTRACTING FROM: " + start + " to " + end + "\n");
 
-        mapWriter.write("\t\tvertices");
+        //This is to print the "vertices" line in the file, do not touch or the entire formatting will be off
+        mapWriter.write("\t\tvertices\n");
 
+        //This scanner will take care of reading each line of the vertex group (each lines holds an x, y, z)
         Scanner vertScanner;
 
+        //This will be the new line written to the map file, holding shifted and formatted values
+        String newLine;
+
+        //Iterate through the vertex group
         for (int i = start; i < end; i++)
         {
+            //Feed the line into the scanner
             vertScanner = new Scanner(lines[i]);
+
+            //Extract 3 doubles and throw them into the container doubles
+            vertX = Double.parseDouble(String.valueOf(vertScanner.nextDouble())) + xShift;
+            vertY = Double.parseDouble(String.valueOf(vertScanner.nextDouble())) + yShift;
+            vertZ = Double.parseDouble(String.valueOf(vertScanner.nextDouble())) + zShift;
+
+            //Format the values into the new line
+            newLine = String.format("\t\t\t%.6f %.6f %.6f\n", vertX, vertY, vertZ);
+
+            //System.out.println(newLine);
+
+            //Write the new line into the map file
+            mapWriter.write(newLine);
         }
     }
 
