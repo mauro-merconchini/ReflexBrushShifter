@@ -4,7 +4,7 @@
   <headerType>console</headerType>
   <jar>D:\Documents\Programming\Java\ReflexBrushShifter\out\artifacts\ReflexBrushShifter_jar\ReflexBrushShifter.jar</jar>
   <outfile>D:\Documents\Programming\Java\ReflexBrushShifter\out\launch4j\ReflexBrushShifter.exe</outfile>
-  <errTitle></errTitle>
+  <errTitle>Java 1.6.0 or higher not found</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>

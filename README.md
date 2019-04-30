@@ -31,7 +31,7 @@ would shift every vertex of every brush in the map file **testMap.map** by 256 u
 The resultant map file will be placed in the same directory as the input **.map** file have the following nomenclature:
 
 ```
-<myMap>.map ---> <myMap>_processed.map
+<myMap>.map ---> <myMap>_BrushShifted.map
 ```
 
 ## Built With
