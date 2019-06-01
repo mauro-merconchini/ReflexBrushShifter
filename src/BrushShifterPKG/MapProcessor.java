@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class MapProcessor
@@ -56,8 +57,8 @@ public class MapProcessor
            //Tell the user everything is honky dory for the writer
            System.out.println("Initialized empty map file for writing: " + partialFileName + "_BrushShifted.map");
 
-            lines = new String[lineCount()];
-            System.out.println("Created array of lines with size " + lines.length + "\n");
+           lines = new String[lineCount()];
+           System.out.println("Created array of lines with size " + lines.length + "\n");
         }
     }
 
@@ -71,6 +72,9 @@ public class MapProcessor
     public void shiftMap(int xShift, int yShift, int zShift) throws IOException
     {
         createLinesArray();
+        
+        //Close mapScanner (not necessary after this point)
+        mapScanner.close();
 
         //These two integers will hold the values for which a gap will be left for the vertex groups
         //Initialized to unreachable values
@@ -112,6 +116,7 @@ public class MapProcessor
             }
         }
 
+        //Close mapWriter
         mapWriter.close();
     }
 
@@ -135,6 +140,9 @@ public class MapProcessor
             lines++;
             //System.out.println("I am at line" + lines);
         }
+        
+        //Close lineCounter
+        lineCounter.close();
 
         //Spit out the amount of lines
         return lines;
@@ -171,17 +179,15 @@ public class MapProcessor
         //This is to print the "vertices" line in the file, do not touch or the entire formatting will be off
         mapWriter.write("\t\tvertices\n");
 
-        //This scanner will take care of reading each line of the vertex group (each lines holds an x, y, z)
-        Scanner vertScanner;
-
         //This will be the new line written to the map file, holding shifted and formatted values
         String newLine;
 
         //Iterate through the vertex group
         for (int i = start; i < end; i++)
         {
+            //This scanner will take care of reading each line of the vertex group (each lines holds an x, y, z)
             //Feed the line into the scanner
-            vertScanner = new Scanner(lines[i]);
+            Scanner vertScanner = new Scanner(lines[i]);
 
             //Extract 3 doubles and throw them into the container doubles
             vertX = Double.parseDouble(String.valueOf(vertScanner.nextDouble())) + xShift;
@@ -195,6 +201,9 @@ public class MapProcessor
 
             //Write the new line into the map file
             mapWriter.write(newLine);
+            
+            //Close vertScanner
+            vertScanner.close();
         }
     }
 
