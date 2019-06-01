@@ -1,6 +1,7 @@
 package BrushShifterPKG;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -123,6 +124,8 @@ public class Main
 
         if (argumentsValid)
         {
+            Locale.setDefault(Locale.ENGLISH);
+            
             //The following 4 declarations will hold the arguments
             String mapFile = args[0];
             int xShift = Integer.parseInt(args[1]);
